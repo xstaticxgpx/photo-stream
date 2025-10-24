@@ -1,4 +1,5 @@
-ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
+#ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
+ARG  BASE_IMAGE=localhost/photo-stream_photo-stream:latest
 FROM ${BASE_IMAGE}
 
 RUN apk update && apk upgrade &&\
@@ -13,6 +14,8 @@ RUN ruby -v && gem install bundler jekyll &&\
     bundle config --local build.sassc --disable-march-tune-native &&\
     bundle install
 
+RUN --mount=type=bind,src=photos,dst=/photo-stream/photos bundle exec jekyll build
+
 EXPOSE 4000
 
-ENTRYPOINT bundle exec jekyll serve --host 0.0.0.0
+ENTRYPOINT bundle exec jekyll serve --host 0.0.0.0 --skip-initial-build

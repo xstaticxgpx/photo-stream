@@ -26,19 +26,15 @@ image_processing:
   large:
     source: photos/original
     destination: photos/large
-    resize_to_limit: [2048, 2048]
-    saver:
-      strip: true
+    resize_to_limit: [4096, 4096]
   thumbnail:
     source: photos/original
     destination: photos/thumbnail
-    resize_to_limit: [640, 640]
-    saver:
-      strip: true
+    resize_to_limit: [1024, 1024]
   tint:
     source: photos/original
     destination: photos/tint
-    resize_to_fill: [1,1]
+    resize_to_fill: [1, 1]
     saver:
       strip: true
 
