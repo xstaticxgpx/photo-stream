@@ -1,5 +1,5 @@
-#ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
-ARG  BASE_IMAGE=localhost/photo-stream_photo-stream:latest
+ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
+#ARG  BASE_IMAGE=localhost/photo-stream_photo-stream:latest
 FROM ${BASE_IMAGE}
 
 RUN apk update && apk upgrade &&\
