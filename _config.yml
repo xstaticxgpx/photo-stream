@@ -21,12 +21,13 @@
 # Build settings
 plugins:
   - jekyll-dotenv
+  - jekyll/minibundle
 
 image_processing:
   large:
     source: photos/original
     destination: photos/large
-    resize_to_limit: [4096, 4096]
+    resize_to_limit: [3072, 3072]
   thumbnail:
     source: photos/original
     destination: photos/thumbnail
@@ -58,3 +59,8 @@ image_processing:
 #   - vendor/gems/
 #   - vendor/ruby/
 exclude: [Dockerfile, LICENSE, docker-compose.yml, README.md, Procfile]
+
+webrick:
+  headers:
+    Cache-Control: public, max-age=86400
+    #Cache-Control: private, max-age=0, proxy-revalidate, no-store, no-cache, must-revalidate

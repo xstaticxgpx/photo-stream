@@ -20,6 +20,7 @@ group :jekyll_plugins do
   gem "exiftool_vendored", "12.50"
   gem "ruby-vips", "~> 2.1.4"
   gem "jekyll_image_processing", git: "https://github.com/benubois/jekyll_image_processing"
+  gem 'jekyll-minibundle'
   gem "jekyll-tidy"
   gem 'jekyll-dotenv'
   gem "htmlbeautifier", "<1.4.0"
